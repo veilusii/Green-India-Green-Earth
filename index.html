@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green India Green Earth — Gamified Eco-Living</title>
+    <meta name="description" content="A gamified app to build eco-friendly habits, track carbon footprint, and earn rewards for sustainable living.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom config for colors and font, ensuring Inter is used */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #F0FFF4 0%, #FAFFFb 100%);
+        }
+        .text-green-main { color: #0b8a4e; }
+        .bg-green-light { background-color: #F7FFF8; }
+        .border-green-subtle { border-color: rgba(11, 138, 78, 0.1); }
+        .shadow-green { box-shadow: 0 10px 30px rgba(11, 138, 78, 0.08); }
+        .hero-gradient { background: linear-gradient(180deg, #ffffff 0%, #F7FFF8 100%); }
+
+        /* Animation for fade-in effect */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(12px);
+            animation: fadeUp 0.7s forwards;
+        }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: none; }
+        }
+        /* Style for the custom message box */
+        .message-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+    <div id="message-container"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <header class="flex items-center justify-between py-4 sm:py-6">
+            <a class="flex items-center space-x-3" href="#">
+                <div class="w-10 h-10 rounded-xl bg-green-700 flex items-center justify-center text-white font-extrabold shadow-lg">GI</div>
+                <div>
+                    <div class="text-lg font-extrabold text-green-700 leading-none">Green India</div>
+                    <div class="text-xs font-semibold text-gray-500">Green Earth</div>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="#features" class="text-sm font-semibold text-gray-700 hover:text-green-700 transition">Features</a>
+                <a href="#community" class="text-sm font-semibold text-gray-700 hover:text-green-700 transition">Community</a>
+                <a href="#rewards" class="text-sm font-semibold text-gray-700 hover:text-green-700 transition">Rewards</a>
+                <a href="#contact" class="text-sm font-semibold text-gray-700 hover:text-green-700 transition">Contact</a>
+                <button class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md transition">
+                    Download App
+                </button>
+            </nav>
+            <button class="md:hidden text-green-700 text-xl">
+                <!-- Icon for mobile menu -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </header>
+
+        <main class="space-y-16 lg:space-y-24">
+            <!-- Hero Section -->
+            <section class="grid lg:grid-cols-2 gap-10 lg:gap-16 pt-8 pb-12 items-center bg-white hero-gradient rounded-2xl shadow-green border border-green-subtle">
+                <div class="px-6 sm:px-10 lg:pl-10 lg:pr-0">
+                    <span class="inline-block px-3 py-1 text-xs font-bold text-green-700 bg-green-100 rounded-full mb-3 shadow-sm">
+                        New • Gamified Sustainability
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight fade-up" style="animation-delay:0.1s;">
+                        Make green living easy, fun, and rewarding.
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-600 fade-up" style="animation-delay:0.2s;">
+                        Track your carbon footprint, complete daily challenges, earn real-world rewards, and join a community committed to a cleaner future.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-6 fade-up" style="animation-delay:0.3s;">
+                        <span class="px-3 py-1 text-sm font-semibold text-green-700 bg-green-light rounded-full border border-green-subtle">Track Habits</span>
+                        <span class="px-3 py-1 text-sm font-semibold text-green-700 bg-green-light rounded-full border border-green-subtle">Carbon Meter</span>
+                        <span class="px-3 py-1 text-sm font-semibold text-green-700 bg-green-light rounded-full border border-green-subtle">Real Rewards</span>
+                    </div>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 fade-up" style="animation-delay:0.4s;">
+                        <button class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg shadow-green-600/30 transition transform hover:scale-[1.02]">
+                            Download on Play Store
+                        </button>
+                        <button class="px-6 py-3 border-2 border-green-400 text-green-700 font-semibold rounded-xl hover:bg-green-50 transition">
+                            Watch Demo
+                        </button>
+                    </div>
+
+                    <p class="mt-4 text-xs text-gray-500">
+                        Available on Android (iOS coming soon). Join the movement of 10,000+ eco-doers.
+                    </p>
+                </div>
+
+                <!-- Phone Mockup -->
+                <div class="flex justify-center lg:justify-end lg:pr-10 p-6 lg:p-0 fade-up" style="animation-delay:0.5s;">
+                    <div class="w-64 h-96 lg:w-72 lg:h-[480px] bg-white rounded-[32px] p-2 shadow-2xl border-4 border-gray-100 transform rotate-3 hover:rotate-0 transition duration-500 ease-in-out">
+                        <div class="w-full h-full rounded-2xl bg-gray-50 border border-green-100 overflow-hidden flex flex-col" role="img" aria-label="App preview screen showing carbon savings">
+                            <div class="p-4 bg-green-50 text-green-700 font-bold border-b border-green-100">
+                                🏠 Dashboard
+                            </div>
+                            <div class="p-4 flex flex-col space-y-4 flex-grow">
+                                <div class="bg-white p-3 rounded-xl shadow-md border border-green-50">
+                                    <h4 class="font-bold text-gray-700">Today's Impact</h4>
+                                    <p class="text-3xl font-extrabold text-green-600 mt-1">1.2 kg CO₂ Saved</p>
+                                    <p class="text-xs text-gray-500 mt-1">Goal: 2.0 kg CO₂</p>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-xl shadow-md border border-green-50">
+                                    <h4 class="font-bold text-gray-700 flex justify-between">
+                                        Daily Challenge
+                                        <span class="text-xs font-semibold text-green-600">3/5 Done</span>
+                                    </h4>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-2">
+                                        Use public transport for one trip.
+                                    </p>
+                                </div>
+
+                                <div class="mt-auto text-center text-xs text-gray-400">
+                                    Tap to view rewards & leaderboards.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Hero Section -->
+
+            <!-- Features Section -->
+            <section id="features" class="px-6 sm:px-10 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Turn Habits into Impact</h2>
+                    <p class="text-lg text-gray-600 mt-2">Simple steps to build lasting eco-friendly routines.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border border-green-50 hover:shadow-xl transition duration-300">
+                        <div class="text-3xl text-green-600 mb-3">🌱</div>
+                        <h3 class="text-xl font-bold text-gray-900">Track Habits Effortlessly</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Log daily eco-actions like recycling, reducing meat consumption, or using reusable bags to see your impact grow in real-time.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border border-green-50 hover:shadow-xl transition duration-300">
+                        <div class="text-3xl text-green-600 mb-3">🏆</div>
+                        <h3 class="text-xl font-bold text-gray-900">Fun, Gamified Challenges</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Complete daily and weekly challenges, earn badges, and compete with friends on city-wide leaderboards for bragging rights.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border border-green-50 hover:shadow-xl transition duration-300">
+                        <div class="text-3xl text-green-600 mb-3">🎁</div>
+                        <h3 class="text-xl font-bold text-gray-900">Real-World Rewards</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Redeem earned points for discounts, vouchers, and free products from our verified eco-friendly partner brands across India.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- /Features Section -->
+
+            <!-- Community Section -->
+            <section id="community" class="px-6 sm:px-10 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Power in Community</h2>
+                    <p class="text-lg text-gray-600 mt-2">Connect, collaborate, and make a collective difference.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-green-light rounded-xl shadow-inner border border-green-subtle">
+                        <h3 class="text-2xl font-bold text-green-700">Local Action Groups</h3>
+                        <p class="text-gray-600 mt-2">Create or join city-specific groups to organize local clean-ups, tree planting drives, and sustainable living workshops together.</p>
+                    </div>
+                    <div class="p-6 bg-green-light rounded-xl shadow-inner border border-green-subtle">
+                        <h3 class="text-2xl font-bold text-green-700">Knowledge Hub</h3>
+                        <p class="text-gray-600 mt-2">Access verified information, tips, and guides on composting, minimizing waste, and finding local sustainable vendors.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- /Community Section -->
+
+            <!-- CTA Strip -->
+            <section id="rewards" class="px-6 sm:px-10 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between p-8 bg-green-600 rounded-2xl shadow-xl shadow-green-600/30 text-white">
+                    <div>
+                        <h3 class="text-2xl font-bold">Ready to start your eco-journey?</h3>
+                        <p class="text-green-200 mt-1">Download the app now and turn small actions into big, rewarding impact.</p>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <button class="px-6 py-3 bg-white hover:bg-gray-100 text-green-700 font-bold rounded-xl transition shadow-lg">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- /CTA Strip -->
+
+            <!-- Contact Section -->
+            <section id="contact" class="px-6 sm:px-10 lg:px-8 pb-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
+                    <p class="text-lg text-gray-600 mt-2">Questions, partnerships, or campus drives? We'd love to hear from you.</p>
+                </div>
+                <div class="max-w-xl mx-auto p-8 bg-white rounded-2xl shadow-lg border border-green-50">
+                    <form onsubmit="event.preventDefault(); handleContact(event);" class="space-y-4">
+                        <input type="text" id="name" placeholder="Your Name" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-green-500 focus:border-green-500 transition" />
+                        <input type="email" id="email" placeholder="Email Address" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-green-500 focus:border-green-500 transition" />
+                        <!-- Note: The 'subject' field was intentionally removed from the HTML here. -->
+                        <textarea id="message" placeholder="Your Message or Inquiry" rows="4" required
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-green-500 focus:border-green-500 transition"></textarea>
+                        <button type="submit" class="w-full px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+                    <p class="text-center text-sm text-gray-500 mt-4">
+                        Or reach us directly at <a href="mailto:hello@greenindiagreenearth.org" class="text-green-600 hover:underline">hello@greenindiagreenearth.org</a>
+                    </p>
+                </div>
+            </section>
+            <!-- /Contact Section -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-200 mt-12 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+            <div class="mb-4 sm:mb-0">
+                © 2025 Green India Green Earth. All rights reserved. • Built with purpose.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-green-600 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-green-600 transition">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Function to show a custom message box (replaces alert())
+        function showMessage(type, title, content) {
+            const container = document.getElementById('message-container');
+            const messageBox = document.createElement('div');
+            const baseClasses = 'message-box p-4 rounded-xl shadow-xl flex items-start space-x-3 opacity-0 transform translate-x-10';
+
+            let typeClasses = '';
+            let icon = '';
+
+            if (type === 'success') {
+                typeClasses = 'bg-green-100 border border-green-300 text-green-800';
+                icon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M9 11l3 3L22 4"/></svg>';
+            }
+
+            messageBox.className = `${baseClasses} ${typeClasses}`;
+            messageBox.innerHTML = `
+                ${icon}
+                <div>
+                    <div class="font-bold">${title}</div>
+                    <div class="text-sm">${content}</div>
+                </div>
+            `;
+
+            container.appendChild(messageBox);
+
+            // Trigger fade-in animation
+            setTimeout(() => {
+                messageBox.style.opacity = '1';
+                messageBox.style.transform = 'translateY(0) translateX(0)';
+            }, 10);
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                messageBox.style.opacity = '0';
+                messageBox.style.transform = 'translateY(-10px) translateX(10px)';
+                setTimeout(() => {
+                    messageBox.remove();
+                }, 300); // Remove after transition
+            }, 5000);
+        }
+
+        // Form Submission Handler
+        function handleContact(event){
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // In a real application, you would send this data to a server here (e.g., using fetch API)
+            // Example: fetch('/api/contact', { method: 'POST', body: JSON.stringify({ name, email, message }) });
+
+            showMessage(
+                'success',
+                'Message Sent!',
+                `Thanks, ${name}! We've received your message and will reply to ${email} soon.`
+            );
+
+            // Reset form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+            // FIX: Removed the line below which was causing an error because 'subject' input is missing.
+            // document.getElementById('subject').value = ''; 
+        }
+
+        // Apply fade-up animations on load
+        window.onload = () => {
+            document.querySelectorAll('.fade-up').forEach((el, index) => {
+                el.style.animationDelay = `${0.1 + index * 0.1}s`;
+            });
+        };
+    </script>
+</body>
+</html>
